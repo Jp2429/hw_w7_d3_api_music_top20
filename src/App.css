@@ -46,6 +46,21 @@
   width:75%;
   text-align: center;
 }
+#genre-select{
+  width:65%;
+  height:30px;
+  text-align: center;
+  border:2px;
+  border-radius:10px;
+  border-color: black;
+  border-style: solid;
+  background-color: aqua ;
+  /* user-select: none; */
+}
+/* #genre-select::selection{
+  text-decoration: solid;
+  color:red;
+} */
 
 ul{
   display:grid;
