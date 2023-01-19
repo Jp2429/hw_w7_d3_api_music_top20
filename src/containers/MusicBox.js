@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MusicList from '../components/MusicList.js';
+import SelectByGenre from '../components/SelectByGenre';
 
 
 
@@ -15,6 +16,7 @@ const MusicContainer = () => {
         fetch(`https://itunes.apple.com/gb/rss/topsongs/limit=20${selectedGenre}/json`)
             .then(response=>response.json())
             .then(musicdata=>setMusicList(musicdata.feed.entry))
+            .catch(err => console.error(`Loading songs error: ${err}`));
     }
 
     const onChartsClicked=function(music){
@@ -29,12 +31,7 @@ const MusicContainer = () => {
     return(
         <div className="music-box">
             <h1>Top 20 Songs in the Charts</h1><hr></hr>
-            <select id="genre-select" onChange={handleSelectChange}>
-                <option value="">All</option>
-                <option value="/genre=21">Rock</option>
-                <option value="/genre=17">Dance</option>
-                <option value="/genre=6">Country</option>
-            </select>
+            <SelectByGenre handleSelectChange={handleSelectChange}/>
             {charts.length && <MusicList charts={charts} />}        
         </div>
     )

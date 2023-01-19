@@ -81,5 +81,17 @@ ul li{
   border-color: black;
   border-style: solid;
 }
+#song-image{
+  float:left;
+  width:100px;
+  margin-top:-110px;
+  margin-left: 50px;
+}
+.audio-control{
+  float:right;
+  width:100px;
+  margin-top:-110px;
+  margin-right:50px;
+}
 
 
